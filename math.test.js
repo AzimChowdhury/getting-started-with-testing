@@ -30,3 +30,24 @@ it('it should provide correct sum if a numeric string is provided', () => {
     expect(result).toBe(expectedResult)
 })
 
+
+
+it('it should throw an error if no argument is passed', () => {
+
+    const resultFn = () => {
+        add()
+    }
+
+    expect(resultFn).toThrow()
+})
+
+
+it('it should throw an error if multiple argument are passed', () => {
+
+    const resultFn = () => {
+        add(1, 2, 3)
+    }
+
+    expect(resultFn).toThrow(/is not iterable/i);
+})
+
